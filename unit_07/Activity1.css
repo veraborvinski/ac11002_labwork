@@ -1,0 +1,63 @@
+#bigbox{
+  background-color: black;
+  width: 90%;
+  height: 175px;
+  margin: 10px;
+  align-self: center;
+}
+
+#box1 {
+  background-color: tomato;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}
+
+#box2 {
+  background-color: orange;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}
+
+#box3 {
+  background-color: yellow;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}
+
+#box4 {
+  background-color: lime;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}
+
+#box5 {
+  background-color: green;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}
+
+#box6 {
+  background-color: cyan;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}
+
+#box7 {
+  background-color: turquoise;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}
+
+#box8 {
+  background-color: blue;
+  width: 12.5%;
+  height: 175px;
+  display: inline-block;
+}

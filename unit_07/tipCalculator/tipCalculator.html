@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tip Calculator</title>
+  <style media="screen">
+    h5 {
+      padding: 20px;
+    }
+
+    p {
+      border-style: outset;
+      width: 10%;
+      margin-left: auto;
+    margin-right: auto;
+    }
+
+    #bill{
+      border-style: outset;
+    }
+  </style>
+</head>
+
+<body style="text-align: center;">
+  <header>
+    <h1>Tip Calculator</h1>
+  </header>
+  <main>
+    <h5>Enter Total Bill Amount</h5>
+
+    <input type="text" id="bill"><br><br>
+
+    <h5>Select Tip Preferences</h5>
+    <div>
+      <button type="button" id="button1">5%</button>
+      <button type="button" id="button2">10%</button>
+      <button type="button" id="button3">25%</button>
+    </div>
+
+    <button type="button" id="button4">Largest from 25% or £2+10%
+    </button>
+
+    <h5>Total Bill Value</h5>
+
+    <p id="total">£0</p>
+  </main>
+  <script src="tipCalculator.js" charset="utf-8"></script>
+</body>
+
+
+</html>
