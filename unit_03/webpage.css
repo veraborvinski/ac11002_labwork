@@ -1,0 +1,68 @@
+.title{
+  background-color: #ffffff;
+  width: 100%;
+  padding: 20px;
+
+}
+.title img{
+  float: left;
+  display: inline;
+  width: 100px;
+  height: 40px;
+  padding: 20px;
+}
+nav{
+  background-color: #3D3D3D;
+  padding: 20px;
+  width: 100%;
+}
+nav a{
+  padding: 8%;
+  font-size: 20px;
+  color: #dddddd;
+}
+
+#homepage{
+  width: 56%;
+  height: 500px;
+text-align: left;
+float: left;
+  background-color: #E0E0E0;
+padding: 30px;
+
+
+}
+
+#side{
+  width: 35%;
+  height: 500px;
+float: right;
+background-color: #B5BEC6;
+padding: 30px;
+
+}
+
+
+footer a {
+  padding: 8%;
+  font-size: 20px;
+  color: #dddddd;
+}
+
+#foot1{
+  background-color:#3D3D3D;
+  float: left;
+  width: 30%;
+}
+
+#foot3{
+  background-color:#B5BEC6;
+  float: none;
+  width: 30%;
+}
+
+#foot3{
+  background-color: #666666;
+  float: right;
+  width: 30%;
+}
