@@ -1,0 +1,57 @@
+@@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+body {
+  background-color: #E7E6F7;
+}
+
+.paper {
+  background-color: #827081;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+}
+
+#snacks, #burgers, #dishes, #desserts {
+  margin-left: 60px;
+}
+
+h1 {
+  font-family: 'Parisienne', cursive;
+  color: #E3D0D8;
+  font-size: 60px;
+  float: none;
+}
+
+h2 {
+  font-family: 'Parisienne', cursive;
+  font-size: 40px;
+  color: #AEA3B0;
+}
+
+h3 {
+  font-family: 'Parisienne', cursive;
+  font-size: 20px;
+  color: #AEA3B0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #AEA3B0;
+  padding: 8px;
+  background-color: #C6D2ED;
+}
+nav{
+  background-color: #C6D2ED;
+  padding: 20px;
+  width: 100%;
+}
+nav a{
+  padding: 8%;
+  font-family: 'Parisienne', cursive;
+  font-size: 20px;
+  color: #827081;
+}
