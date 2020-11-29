@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Films</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <main>
+      <div class="container" >
+        <div class="row" id="single">
+          <div class="col-4">
+            <img src="" alt="" id="poster">
+          </div>
+          <div class="col" id="col">
+            <h1 id="title"></h1>
+            <h2 id="release"></h2>
+            <p id="plot"></p>
+            <ul>
+              <li id="cast"></li>
+              <li id="director"></li>
+              <li id="rating"></li>
+            </ul>
+          </div>
+          </div>
+        </div>
+
+    </main>
+    <script type="text/javascript">
+    window.onload = function(){
+      main();}
+
+      function createNode(element) {
+      return document.createElement(element); // Create the type of element you pass in
+      }
+
+      function append(parent, el) {
+      return parent.appendChild(el); // Append the second parameter(element) to the first one
+      }
+
+function main(){
+    let page = window.location.href
+    let searchString = page.split('?');
+    filmid = searchString[1]
+url = "https://www.omdbapi.com/?i="+filmid+"&apikey=caadaf4e";
+
+
+          fetch(url)
+            .then((resp) => resp.json())
+            .then(function(data) {
+              console.log(data);
+
+                document.getElementById('poster').src = data.Poster;
+                document.getElementById('title').innerHTML = data.Title;
+                document.getElementById('release').innerHTML = data.Released;
+                document.getElementById('plot').innerHTML = data.Plot;
+                document.getElementById('cast').innerHTML = "Starring: " + data.Actors;
+                document.getElementById('director').innerHTML = "Director: " + data.Director;
+                document.getElementById('rating').innerHTML = "Rating: " + data.Ratings[0].Value;
+
+            })
+
+            .catch(function(error) {
+            console.log(error);
+          })
+        };
+
+    </script>
+  </body>
+</html>
