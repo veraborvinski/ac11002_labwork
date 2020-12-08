@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Films</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+    <h1>Movies</h1>
+    <form class="form-inline my-2 my-lg-0">
+          <input v-model="filmSearch" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="search">
+
+          <button v-on:click="getMoviles" class="btn btn-primary" type="button" id="btn">Search</button>
+    </form>
+        <div class="card-group" id="movies">
+          <div class="col-sm-3 mb-2" v-for="movie in movies">
+    <div  class='card'>
+              <img class='card-img-top w-10' :src=movie.Poster>
+              <div class='card-body'>
+                <h5 class='card-title'>{{movie.Title}}</h5>
+                <p  class='card-text'>{{movie.Year}}</p>
+                <a :href="'singlefilm.html?' + movie.imdbID" class='btn btn-primary'>More Information</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        movies: [],
+        message: ''
+      },
+      methods: {
+        getMoviles: function(event) {
+          var vm = this
+          axios.get('https://www.omdbapi.com/?s=' + this.filmSearch+ '&apikey=caadaf4e')
+            .then(function(response) {
+              vm.movies = response.data.Search
+            })
+        }
+      }
+    })
+  </script>
+
+  </body>
+</html>
