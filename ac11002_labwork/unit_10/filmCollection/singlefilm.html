@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Singlefilm</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <div id="app">
+
+
+      <div class="container">
+        <div class="row" id="single">
+          <div class="col-4">
+            <img :src=movie.Poster alt="" class="w-100" id="poster">
+          </div>
+          <div class="col" id="col">
+            <h1 id="title">{{movie.Title}}</h1>
+            <h2 id="release">{{movie.Released}}</h2>
+            <p id="plot">{{movie.Plot}}</p>
+            <ul>
+              <li id="cast">Staring:{{movie.Actors}}</li>
+              <li id="director">Director:{{movie.Director}}</li>
+              <li id="rating">Rating:{{movie.imdbRating}}/10</li>
+            </ul>
+            <a class="btn btn-dark" href="./filmcolection.html">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        movie: [],
+        movieID: ''
+      },
+      created() {
+        var vm = this;
+        var url = window.location.href;
+        var searchString = url.split('?');
+        searchString = searchString[1];
+        axios.get('https://www.omdbapi.com/?i=' + searchString + '&apikey=caadaf4e')
+          .then(function(response) {
+            vm.movie = response.data;
+            // console.log(vm.movie);
+          })
+      }
+    })
+  </script>
+</body>
+
+</html>
